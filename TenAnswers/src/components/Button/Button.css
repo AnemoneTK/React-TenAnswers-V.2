@@ -1,0 +1,35 @@
+.White{
+    border: 3px solid var(--white);
+    background-color: transparent;
+    color: var(--white);
+}
+.White:hover{
+    border: 3px solid var(--white);
+    background-color: var(--white);
+    color: var(--blue);
+    transition: all 0.3s ease;
+}
+
+.Black{
+    border: 3px solid var(--black);
+    background-color: transparent;
+    color: var(--black);
+}
+.Black:hover{
+    border: 3px solid var(--black);
+    background-color: var(--black);
+    color: var(--blue);
+    transition: all 0.3s ease;
+}
+
+.Blue{
+    border: 3px solid var(--blue);
+    background-color: var(--blue);
+    color: var(--white);
+}
+.Blue:hover{
+    border: 3px solid var(--white);
+    background-color: var(--white);
+    color: var(--blue);
+    transition: all 0.3s ease;
+}

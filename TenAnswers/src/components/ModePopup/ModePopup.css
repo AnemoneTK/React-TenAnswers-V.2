@@ -1,0 +1,34 @@
+.popup.open{
+    opacity: 1;
+    visibility: visible;
+    transition: all .5s ease-in-out;
+}
+.popup.close{
+    opacity: 0;
+    visibility: hidden;
+    bottom: -100px !important;
+    transition: all .5s ease-in-out;
+}
+
+.Easy:hover{
+    color: var(--white);
+    background-color: var(--blue);
+
+    transition: all 0.3s ease;
+}
+.Normal .text{
+    border-top: 3px solid var(--background);
+    border-bottom: 3px solid var(--background);
+}
+.Normal:hover{
+    color: var(--white);
+    background-color: var(--orange);
+
+    transition: all 0.3s ease;
+}
+.Hard:hover{
+    color: var(--white);
+    background-color: var(--red);
+
+    transition: all 0.3s ease;
+}
