@@ -1,15 +1,18 @@
 import TopNav from "../../TopNav/TopNav";
-import Dropdown from "./Dropdown";
+import BsAccordion from "./BsAccordion";
 
 function Tutorial() {
   return (
     <>
-      <TopNav back="d-block" hint="d-none" />
-      <div className="row col-12 ">
-        <h1 className="col-12 text-center text-white my-3">วิธีเล่น</h1>
-      </div>
-        <Dropdown/>
+    <TopNav back="d-block" hint="d-none" />
+    <div className="text-center text-white fs-1 bolder mt-2 mb-4">วิธีเล่น</div>
+    <BsAccordion num='0'/>
+    <BsAccordion num='1'/>
+    <BsAccordion num='2'/>
+    <BsAccordion num='3'/>
     </>
+      
+    
   );
 }
 

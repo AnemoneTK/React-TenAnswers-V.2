@@ -2,20 +2,20 @@ import Logo from "../../Logo/Logo";
 import Button from "../../Button/Button";
 import ModeBtn from "../../ModeBtn/ModeBtn";
 
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import TopNav from "../../TopNav/TopNav";
 
 function Homepage(props) {
   const [popup, setPopup] = useState(false);
-  let popRef = useRef();
-  useEffect(() => {
-    let overlay = (e) => {
-      if (!popRef.current.contains(e.target)) {
-        setPopup(false);
-      }
-    };
-    document.addEventListener("mousedown", overlay);
-  });
+  // let popRef = useRef();
+  // useEffect(() => {
+  //   let overlay = (e) => {
+  //     if (!popRef.current.contains(e.target)) {
+  //       setPopup(false);
+  //     }
+  //   };
+  //   document.addEventListener("mousedown", overlay);
+  // });
 
   return (
     <>
@@ -35,6 +35,7 @@ function Homepage(props) {
             className="row col-8"
             onClick={() => {
               setPopup(!popup);
+              props.open(true)
             }}
           >
             <Button textValue="เริ่มเกมใหม่" type="White" />
@@ -45,7 +46,6 @@ function Homepage(props) {
           className={`popup ${popup ? "open" : "close"} 
             col-10 position-absolute bottom-0 start-50 translate-middle-x 
             rounded-5 bg-white d-flex flex-column justify-content-center align-items-center z-3`}
-          ref={popRef}
         >
           <ModeBtn mode="Easy" />
           <ModeBtn mode="Normal" />
