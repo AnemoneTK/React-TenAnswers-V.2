@@ -3,8 +3,8 @@ import { Accordion } from "react-bootstrap";
 function BsAccordion({num}) {
   return (
     <>
-    <Accordion>
-        <Accordion.Item eventKey="0" >
+    <Accordion className="py-2">
+        <Accordion.Item eventKey="0" className="border border-0 rounded-0">
           <Accordion.Header>{TutorialList[num].head}</Accordion.Header>
           <Accordion.Body>
           {TutorialList[num].body}
