@@ -1,9 +1,10 @@
-import Logo from "../../Logo/Logo";
-import Button from "../../Button/Button";
-import ModeBtn from "../../ModeBtn/ModeBtn";
-
 import { useState } from "react";
-import TopNav from "../../TopNav/TopNav";
+
+import Logo from "../Logo/Logo";
+import Button from "../Button/Button";
+import ModeBtn from "../ModeBtn/ModeBtn";
+
+import TopNav from "../TopNav/TopNav";
 
 function Homepage(props) {
   const [popup, setPopup] = useState(false);

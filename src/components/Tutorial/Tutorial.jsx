@@ -1,5 +1,6 @@
-import TopNav from "../../TopNav/TopNav";
-import BsAccordion from "./BsAccordion";
+import TopNav from "../TopNav/TopNav";
+import BsAccordion from "./Dropdown/BsAccordion";
+
 
 function Tutorial() {
   return (

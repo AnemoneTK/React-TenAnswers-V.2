@@ -2,9 +2,10 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 // import { useState } from "react";
 
-// import Homepage from "./components/Page/Homepage/Homepage";
+// import Homepage from "./components/Homepage/Homepage";
+import Tutorial from "./components/Tutorial/Tutorial";
+
 // import Overlay from "./components/Overlay";
-import Tutorial from "./components/Page/Tutorial/Tutorial";
 
 function App() {
   // const [openOverlay, setOverlay] = useState(false);
@@ -15,7 +16,7 @@ function App() {
 
       <div className="warper">
         <div className="frame position-relative container col-lg-4 col-md-8 col-sm-12 ">
-          {/* <Homepage open={(openOverlay) => setOverlay(openOverlay)} /> */}
+          {/* <Homepage/> */}
           <Tutorial/>
         </div>
       </div>
