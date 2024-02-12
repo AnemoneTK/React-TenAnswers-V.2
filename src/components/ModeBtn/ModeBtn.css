@@ -1,3 +1,8 @@
+a{
+    color: var(--background);
+    text-decoration: none;
+}
+
 .popup.open{
     opacity: 1;
     visibility: visible;

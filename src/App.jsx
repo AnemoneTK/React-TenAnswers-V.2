@@ -4,9 +4,9 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-// import { useState } from "react";
 import Homepage from "./components/Homepage/Homepage";
 import Tutorial from "./components/Tutorial/Tutorial";
+import Game from "./components/Game/Game";
 
 function App() {
   // const [openOverlay, setOverlay] = useState(false);
@@ -23,6 +23,9 @@ function App() {
               </Route>
               <Route path="/tutorial">
                 <Tutorial />
+              </Route>
+              <Route path="/game">
+                <Game />
               </Route>
             </Switch>
         </div>

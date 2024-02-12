@@ -5,7 +5,7 @@ function Tutorial() {
   return (
     <>
       <TopNav back="d-block" hint="d-none" />
-      <div className="text-center text-white fs-1 bolder mt-2 mb-4">
+      <div className="text-center text-white fs-1 bolder mt-2 mb-5">
         วิธีเล่น
       </div>
       <BsAccordion num="0" />

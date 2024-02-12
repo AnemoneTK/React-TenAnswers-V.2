@@ -6,7 +6,7 @@ import ModeBtn from "../ModeBtn/ModeBtn";
 
 import TopNav from "../TopNav/TopNav";
 
-function Homepage(props) {
+function Homepage() {
   const [popup, setPopup] = useState(false);
   // let popRef = useRef();
   // useEffect(() => {
@@ -24,19 +24,14 @@ function Homepage(props) {
         className={`overlay ${popup ? "d-block" : "d-none"} 
           bg-black bg-opacity-50 z-2 position-absolute`} style={{width:"100dvw", height:"100dvh"}}
       ></div> */}
-      <div className={`${props.display}`}>
       <TopNav back="d-none" hint="d-block"/>
         <Logo />
         <div className="row justify-content-center h-30">
-          <div className="row col-8 m-3">
-            <Button textValue="เล่นต่อ" type="Blue" />
-          </div>
-
           <div
             className="row col-8"
             onClick={() => {
               setPopup(!popup);
-              props.open(true)
+              // props.open(true)
             }}
           >
             <Button textValue="เริ่มเกมใหม่" type="White" />
@@ -52,7 +47,6 @@ function Homepage(props) {
           <ModeBtn mode="Normal" />
           <ModeBtn mode="Hard" />
         </div>
-      </div>
     </>
   );
 }
