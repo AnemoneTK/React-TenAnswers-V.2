@@ -1,11 +1,12 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
+import {
+  Switch,
+  Route,
+} from "react-router-dom";
 // import { useState } from "react";
-
-// import Homepage from "./components/Homepage/Homepage";
+import Homepage from "./components/Homepage/Homepage";
 import Tutorial from "./components/Tutorial/Tutorial";
-
-// import Overlay from "./components/Overlay";
 
 function App() {
   // const [openOverlay, setOverlay] = useState(false);
@@ -16,8 +17,14 @@ function App() {
 
       <div className="warper">
         <div className="frame position-relative container col-lg-4 col-md-8 col-sm-12 ">
-          {/* <Homepage/> */}
-          <Tutorial/>
+            <Switch>
+              <Route path="/" exact>
+                <Homepage />
+              </Route>
+              <Route path="/tutorial">
+                <Tutorial />
+              </Route>
+            </Switch>
         </div>
       </div>
     </>
