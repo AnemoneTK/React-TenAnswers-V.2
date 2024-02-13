@@ -1,15 +1,16 @@
 .logo-container {
-    margin: 10rem 0 15rem 0 !important;
-  }
-  .logo{
-    color: var(--blue);
-    font-size: 6rem;
-    width: 150px !important;
-    max-width: calc(150% - 50px);
-    margin: 0 auto;
-    padding: 0 10px;
-  }
-  
-  .ten{
-    color: var(--blue);
-  }
+  margin: 10rem 0 !important;
+}
+
+.logo {
+  color: var(--blue);
+  font-size: 6rem;
+  width: 150px !important;
+  max-width: calc(150% - 50px);
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.ten {
+  color: var(--blue);
+}
