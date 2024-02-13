@@ -1,0 +1,21 @@
+.mode {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+.showTxt{
+    font-size: 2rem;
+}
+
+.showValue{
+    min-height:  100px;
+    height: auto;
+}
+.num-input {
+    all: unset;
+    font-size: 2rem;
+    color: var(--white);
+    background-color: transparent;
+    border-bottom: 3px solid var(--white);
+}
