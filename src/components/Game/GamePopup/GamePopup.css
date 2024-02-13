@@ -1,0 +1,14 @@
+.popup.open{
+    opacity: 1;
+    visibility: visible;
+    transition: all .5s ease-in-out;
+}
+.popup.close{
+    opacity: 0;
+    visibility: hidden;
+    top: 2000px !important;
+    transition: all .5s ease-in-out;
+}
+.answer{
+    font-size: 4rem;
+}

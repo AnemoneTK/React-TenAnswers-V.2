@@ -10,7 +10,8 @@ import Game from "./components/Game/Game";
 import Overlay from "./components/Overlay";
 
 function App() {
-  let [openOverlay, setOverlay] = useState(false);
+  const [openOverlay, setOverlay] = useState(false);
+  // const [mode, setMode] = useState("");
 
   return (
     <>
@@ -25,8 +26,8 @@ function App() {
             <Route path="/tutorial">
               <Tutorial />
             </Route>
-            <Route path="/game ">
-              <Game />
+            <Route path="/game">
+              <Game open={(openOverlay) => setOverlay(openOverlay)} />
             </Route>
           </Switch>
         </div>

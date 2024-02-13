@@ -8,19 +8,21 @@ import TopNav from "../TopNav/TopNav";
 function Homepage(props) {
   const [popup, setPopup] = useState(false);
   let popRef = useRef();
+
   useEffect(() => {
-    let overlay = (e) => {
+    let screen = (e) => {
       if (!popRef.current.contains(e.target)) {
         setPopup(false);
         props.open(false);
       }
     };
-    document.addEventListener("mousedown", overlay);
-  });
+    document.addEventListener("mousedown", screen);
+  },[]);
+
 
   return (
     <>
-      <TopNav back="d-none" hint="d-block" />
+      <TopNav back="d-none" hint="d-block"/>
       <Logo />
       <div className="row justify-content-center h-30">
         <div

@@ -1,14 +1,24 @@
-import Button from "../Button/Button";
-import "./Game.css";
-// import { useState } from "react";
+import { useEffect,useState } from "react";
 
-function Game() {
+import Button from "../Button/Button";
+import GamePopup from "./GamePopup/GamePopup";
+import "./Game.css";
+
+          
+function Game(props) {
   // const [count, setCount] = useState(1);
-  // const [randomNum, setRandomNum] = useState(0);
-  // setRandomNum(Math.floor(Math.random(100)))
+  const [randomNum, setRandomNum] = useState(0);
+  useEffect(() => {
+    return () => {
+      props.open(false);
+      setRandomNum(Math.floor(Math.random()*100))
+    };
+  }, []);
 
   return (
     <>
+      {/* <TopNav back="d-block" hint="d-block"/> */}
+      <GamePopup num={randomNum}/>
       <div className="mode row justify-content-center mt-5">Mode</div>
       <div className="row justify-content-center fs-2 mb-5">round 1/10</div>
       <div className="showInput row d-flex flex-column justify-content-center align-items-center">
@@ -35,7 +45,7 @@ function Game() {
             <input
               type="text"
               id="num-input"
-              className="num-input row w-100 text-center mb-5"
+              className="num-input row col-lg-4 col-md-8 col-sm-12 w-100 text-center mb-5"
               placeholder="กรุณากรอกตัวเลข"
             />
           </div>
