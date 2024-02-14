@@ -1,13 +1,14 @@
-
-.showTxt{
+.showTxt {
     font-size: 2rem;
-    height: 3rem;
-}
-
-.showValue{
-    min-height:  100px;
+    min-height: 3rem;
     height: auto;
 }
+
+.showValue {
+    min-height: 100px;
+    height: auto;
+}
+
 .num-input {
     all: unset;
     font-size: 1.5rem;
@@ -16,18 +17,32 @@
     border-bottom: 3px solid var(--white);
 }
 
-.easy{
+.easy {
     color: var(--blue);
     font-weight: 700;
     font-size: 4rem;
 }
-.normal{
+
+.normal {
     color: var(--orange);
     font-weight: 700;
     font-size: 4rem;
 }
-.hard{
+
+.hard {
     color: var(--red);
     font-weight: 700;
     font-size: 4rem;
+}
+
+.White{
+    border: 3px solid var(--white);
+    background-color: transparent;
+    color: var(--white);
+}
+.White:hover{
+    border: 3px solid var(--white);
+    background-color: var(--white);
+    color: var(--blue);
+    transition: all 0.3s ease;
 }
