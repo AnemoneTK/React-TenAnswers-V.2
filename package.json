@@ -2,7 +2,7 @@
   "name": "tenanswers",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://AnemoneTK.github.io/React-TenAnswers-V.2/",
+  "homepage": "https://AnemoneTK.github.io/React-TenAnswers-V.2",
   "type": "module",
   "scripts": {
     "predeploy" : "npm run build",
