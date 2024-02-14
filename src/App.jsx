@@ -15,8 +15,7 @@ function App() {
 
   return (
     <>
-      <Overlay open={openOverlay} />
-
+      <Overlay open={openOverlay}/>
       <div className="warper">
         <div className="frame position-relative container col-lg-4 col-md-8 col-sm-12 ">
           <Switch>
@@ -26,7 +25,7 @@ function App() {
             <Route path="/tutorial">
               <Tutorial />
             </Route>
-            <Route path="/game">
+            <Route path="/game/:gameMode">
               <Game open={(openOverlay) => setOverlay(openOverlay)} />
             </Route>
           </Switch>
