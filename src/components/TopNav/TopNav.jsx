@@ -6,7 +6,7 @@ function TopNav(props) {
   return (
     <>
       <div className="nav row p-3 align-items-center h-10">
-          <Link to="https://AnemoneTK.github.io/React-TenAnswers-V.2/" className={`${props.back}  col text-start`}>
+          <Link to="/" className={`${props.back}  col text-start`}>
             <i className="fa-solid fa-arrow-left fs-4 text-white"></i>
           </Link>
           <Link to="/React-TenAnswers-V.2/tutorial" className={`${props.hint}  col text-end`}>
