@@ -6,11 +6,12 @@ import ModeBtn from "../ModeBtn/ModeBtn";
 import TopNav from "../TopNav/TopNav";
 
 function Homepage(props) {
-
   const [popup, setPopup] = useState(false);
   let popRef = useRef();
 
   useEffect(() => {
+    setPopup(false);
+
     let screen = (e) => {
       if (!popRef.current.contains(e.target)) {
         setPopup(false);
@@ -18,13 +19,13 @@ function Homepage(props) {
       }
     };
     document.addEventListener("mousedown", screen);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]);
-
+    sessionStorage.setItem("gameMode", "");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
-      <TopNav back="d-none" hint="d-block"/>
+      <TopNav back="d-none" hint="d-block" />
       <Logo />
       <div className="row justify-content-center h-30">
         <div
@@ -44,9 +45,9 @@ function Homepage(props) {
             rounded-5 bg-white d-flex flex-column justify-content-center align-items-center z-3`}
         ref={popRef}
       >
-        <ModeBtn mode="Easy" />
-        <ModeBtn mode="Normal" />
-        <ModeBtn mode="Hard" />
+        <ModeBtn text="ง่าย" mode="Easy" />
+        <ModeBtn text="ปานกลาง" mode="Normal" />
+        <ModeBtn text="ยาก" mode="Hard" />
       </div>
     </>
   );

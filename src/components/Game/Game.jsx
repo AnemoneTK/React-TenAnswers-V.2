@@ -19,7 +19,7 @@ function Game(props) {
 
   return (
     <>
-      <GamePopup num={randomNum} display="close"/>
+      <GamePopup num={randomNum} display="close" round={count}/>
       <div className="mode row justify-content-center mt-5">Mode</div>
       <div className="row justify-content-center fs-3 mb-5 text-white">round {count}/10</div>
       <div className="showInput row d-flex flex-column justify-content-center align-items-center">
@@ -31,7 +31,7 @@ function Game(props) {
         </div>
       </div>
       <div className="row my-5">
-        <div className="showValue col-12 bg-white text-center"> a</div>
+        <div className="showValue col-12 fs-1 bg-white d-flex justify-content-center align-items-center">มีค่ามากกว่า 90</div>
       </div>
 
       {/* <div className="button-container w-100 h-20 d-flex flex-column justify-content-start align-items-center"> */}
