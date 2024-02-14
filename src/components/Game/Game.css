@@ -1,11 +1,7 @@
-.mode {
-    color: var(--white);
-    font-weight: 700;
-    font-size: 4rem;
-}
 
 .showTxt{
     font-size: 2rem;
+    height: 3rem;
 }
 
 .showValue{
@@ -18,4 +14,20 @@
     color: var(--white);
     background-color: transparent;
     border-bottom: 3px solid var(--white);
+}
+
+.easy{
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 4rem;
+}
+.normal{
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 4rem;
+}
+.hard{
+    color: var(--red);
+    font-weight: 700;
+    font-size: 4rem;
 }

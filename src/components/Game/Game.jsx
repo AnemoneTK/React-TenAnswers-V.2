@@ -9,10 +9,10 @@ import "./Game.css";
 function Game(props) {
   const [mode, setMode] = useState('')
   let { gameMode } = useParams()
-  
 
   const [count, setCount] = useState(1);
   const [randomNum, setRandomNum] = useState(0);
+  // const [inputTXT, setInputTXT] = useState('')
   useEffect(() => {
     return () => {
       props.open(false);
@@ -32,8 +32,8 @@ function Game(props) {
 
   return (
     <>
-      <GamePopup num={randomNum} display="open" round={count} />
-      <div className="mode row justify-content-center mt-5">{mode}</div>
+      <GamePopup num={randomNum} display="close" round={count} />
+      <div className={`${gameMode} row justify-content-center mt-5`}>{mode}</div>
       <div className="row justify-content-center fs-3 mb-5 text-white">round {count}/10</div>
       <div className="showInput row d-flex flex-column justify-content-center align-items-center">
         <div className="row col-12 justify-content-center text-white fs-5">

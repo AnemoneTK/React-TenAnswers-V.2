@@ -20,7 +20,6 @@ function Homepage(props) {
       }
     };
     document.addEventListener("mousedown", screen);
-    sessionStorage.setItem("gameMode", '');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
