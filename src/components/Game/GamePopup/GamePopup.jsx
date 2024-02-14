@@ -1,20 +1,25 @@
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
 import Button from "../../Button/Button";
-import './GamePopup.css'
+import "./GamePopup.css";
 
 function GamePopup(props) {
+  let color = "#ffff";
+
+  if (props.result == "คุณชนะ") {
+    color = "#50A3AB";
+  } else {
+    color = "#C43B39";
+  }
+
   return (
     <>
-      {/* <div
-        className={`popup ${popup ? "open" : "close"} 
-        col-10 position-absolute bottom-0 start-50 translate-middle-x 
-        rounded-5 bg-white d-flex flex-column justify-content-center align-items-center z-3`}
-      ></div> */}
       <div
-        className={`popup ${props.display} col-8 position-absolute top-50 start-50 translate-middle 
+        className={`popup ${props.display} col-10 col-lg-7 position-absolute top-50 start-50 translate-middle 
         rounded-4 bg-white d-flex flex-column justify-content-around align-items-center z-3 py-3`}
       >
-        <div className="row fs-1 fw-bolder">คุณชนะ</div>
+        <div className="row fs-1 fw-bolder" style={{ color }}>
+          {props.result}
+        </div>
 
         <div className="row fs-4 mt-2">คำตอบคือ</div>
         <div className="answer row fw-bolder mb-2">{props.num}</div>

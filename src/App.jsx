@@ -15,8 +15,7 @@ function App() {
 
   return (
     <>
-      <Overlay open={openOverlay} />
-
+      <Overlay open={openOverlay}/>
       <div className="warper">
         <div className="frame position-relative container col-lg-4 col-md-8 col-sm-12 ">
           <Switch>

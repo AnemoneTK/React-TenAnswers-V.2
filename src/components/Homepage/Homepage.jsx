@@ -8,12 +8,11 @@ import TopNav from "../TopNav/TopNav";
 
 function Homepage(props) {
   const [popup, setPopup] = useState(false);
-  let popRef = useRef();
+  const popRef = useRef();
 
   useEffect(() => {
     setPopup(false);
-
-    let screen = (e) => {
+    const screen = (e) => {
       if (!popRef.current.contains(e.target)) {
         setPopup(false);
         props.open(false);

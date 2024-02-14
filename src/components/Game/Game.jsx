@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import Button from "../Button/Button";
@@ -10,18 +10,21 @@ function Game(props) {
   const [mode, setMode] = useState("");
   let { gameMode } = useParams();
 
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
   const [inputTXT, setInputTXT] = useState('');
-  const [showInput,setShowInput] = useState('')
-  const inputRef = useRef();
+  const inputBox = document.getElementById('num-input')
   const [warning, setWarning] = useState(false);
-
+  const [result,setResult] = useState('คุณชนะ')
+  const [popup, setPopup] = useState('close')
+  const [showValue, setShowValue] = useState('')
+ 
   useEffect(() => {
     return () => {
       props.open(false);
       setRandomNum(Math.floor(Math.random() * 100));
-
+      setPopup('close')
+      setInputTXT('')
       if (gameMode == "easy") {
         setMode("ง่าย");
       } else if (gameMode == "normal") {
@@ -32,32 +35,56 @@ function Game(props) {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  function checkInput() {
+  
+  function SubmitAnswer() {
     // eslint-disable-next-line no-constant-condition
-    let input = inputRef.current.value
+    let input = inputBox.value
     if (input >= 0 && input <= 99 && input % 1 == 0 && input != "") {
       setWarning(false)
+      CheckWin(input,count)
+      ShowValue(input)
+      setCount(count + 1)
       if(inputTXT == ''){
       setInputTXT(input)
       }else{
         setInputTXT(inputTXT + ' , ' + input)
       }
-      setCount(count + 1)
-
+      inputBox.value = ''
     }else{
       setWarning(true)
+      inputBox.value = ''
+    }
+    inputBox.focus()
+  }
+
+  function CheckWin(input,round){
+    if(input == randomNum){
+      setPopup('open')
+      props.open(true);
+    } else if (round == 9 && input != randomNum){
+      setPopup('open')
+      setResult('คุณแพ้')
+      props.open(true);
+      inputBox.disabled = true
+    }
+  }
+  function ShowValue(num){
+    if(num > randomNum){
+      setShowValue('มีค่าน้อยกว่า '+ num)
+    }else if(num < randomNum){
+      setShowValue('มีค่ามากกว่า '+ num)
+
     }
   }
 
   return (
     <>
-      <GamePopup num={randomNum} display="close" round={count} />
+      <GamePopup num={randomNum} display={popup} round={count} result={result}/>
       <div className={`${gameMode} row justify-content-center mt-5`}>
         {mode}
       </div>
       <div className="row justify-content-center fs-3 mb-5 text-white">
-        round {count}/10
+        รอบที่ใช้ {count}/10
       </div>
       <div
         className={`showInput row d-flex flex-column justify-content-center align-items-center ${
@@ -77,7 +104,7 @@ function Game(props) {
         }`}
       >
         <div className="showValue col-12 fs-1 bg-white d-flex justify-content-center align-items-center">
-          มีค่ามากกว่า 90
+          {showValue}
         </div>
       </div>
 
@@ -99,10 +126,14 @@ function Game(props) {
               id="num-input"
               className="num-input row col-lg-4 col-md-8 col-sm-12 w-100 text-center mb-5"
               placeholder="กรุณากรอกตัวเลข"
-              ref={inputRef}
+              onKeyDown={(e) => { 
+                if (e.key === "Enter") { 
+                  SubmitAnswer()
+                } 
+            }} 
             />
           </div>
-          <button className="White text-center fs-3 rounded-pill fw-bold col-12 py-2" onClick={checkInput}>
+          <button className="White text-center fs-3 rounded-pill fw-bold col-12 py-2" onClick={SubmitAnswer}>
             ยืนยัน
           </button>
         </div>
