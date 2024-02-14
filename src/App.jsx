@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -8,6 +8,7 @@ import Homepage from "./components/Homepage/Homepage";
 import Tutorial from "./components/Tutorial/Tutorial";
 import Game from "./components/Game/Game";
 import Overlay from "./components/Overlay";
+import { HashRouter } from "react-router-dom/cjs/react-router-dom.min";
 
 function App() {
   const [openOverlay, setOverlay] = useState(false);
@@ -18,17 +19,13 @@ function App() {
       <Overlay open={openOverlay}/>
       <div className="warper">
         <div className="frame position-relative container col-lg-4 col-md-8 col-sm-12 ">
-          <Switch>
-            <Route path="/" exact>
-              <Homepage open={(openOverlay) => setOverlay(openOverlay)} />
-            </Route>
-            <Route path="/tutorial">
-              <Tutorial />
-            </Route>
-            <Route path="/game/:gameMode">
-              <Game open={(openOverlay) => setOverlay(openOverlay)} />
-            </Route>
-          </Switch>
+          <HashRouter>
+            <Routes>
+              <Route path="/" element={<Homepage open={(openOverlay) => setOverlay(openOverlay)} />} exact />
+              <Route path="/tutorial" element={<Tutorial />}/>
+              <Route path="/game/:gameMode" element={<Game open={(openOverlay) => setOverlay(openOverlay)} />} />
+            </Routes>
+          </HashRouter>
         </div>
       </div>
     </>
