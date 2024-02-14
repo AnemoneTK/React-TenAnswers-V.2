@@ -9,7 +9,7 @@ function TopNav(props) {
           <Link to="/" className={`${props.back}  col text-start`}>
             <i className="fa-solid fa-arrow-left fs-4 text-white"></i>
           </Link>
-          <Link to="/tutorial" className={`${props.hint}  col text-end`}>
+          <Link to="/React-TenAnswers-V.2/tutorial" className={`${props.hint}  col text-end`}>
             <i className="fa-regular fa-circle-question fs-2 text-white"></i>
           </Link>
       </div>
