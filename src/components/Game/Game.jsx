@@ -10,20 +10,20 @@ function Game(props) {
 
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
-  const [inputTXT, setInputTXT] = useState('');
-  const inputBox = document.getElementById('num-input')
+  const [inputTXT, setInputTXT] = useState("");
+  const inputBox = document.getElementById("num-input");
   const [warning, setWarning] = useState(false);
-  const [result,setResult] = useState('คุณชนะ')
-  const [popup, setPopup] = useState('close')
-  const [showValue, setShowValue] = useState('')
- 
+  const [result, setResult] = useState("คุณชนะ");
+  const [popup, setPopup] = useState("close");
+  const [showValue, setShowValue] = useState("");
+
   useEffect(() => {
     return () => {
-      const { gameMode } = useParams()
+      const { gameMode } = useParams();
       props.open(false);
       setRandomNum(Math.floor(Math.random() * 100));
-      setPopup('close')
-      setInputTXT('')
+      setPopup("close");
+      setInputTXT("");
       if (gameMode == "easy") {
         setMode("ง่าย");
       } else if (gameMode == "normal") {
@@ -34,51 +34,55 @@ function Game(props) {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
+
   function SubmitAnswer() {
     // eslint-disable-next-line no-constant-condition
-    let input = inputBox.value
+    let input = inputBox.value;
     if (input >= 0 && input <= 99 && input % 1 == 0 && input != "") {
-      setWarning(false)
-      CheckWin(input,count)
-      ShowValue(input)
-      setCount(count + 1)
-      if(inputTXT == ''){
-      setInputTXT(input)
-      }else{
-        setInputTXT(inputTXT + ' , ' + input)
+      setWarning(false);
+      CheckWin(input, count);
+      ShowValue(input);
+      setCount(count + 1);
+      if (inputTXT == "") {
+        setInputTXT(input);
+      } else {
+        setInputTXT(inputTXT + " , " + input);
       }
-      inputBox.value = ''
-    }else{
-      setWarning(true)
-      inputBox.value = ''
+      inputBox.value = "";
+    } else {
+      setWarning(true);
+      inputBox.value = "";
     }
-    inputBox.focus()
+    inputBox.focus();
   }
 
-  function CheckWin(input,round){
-    if(input == randomNum){
-      setPopup('open')
+  function CheckWin(input, round) {
+    if (input == randomNum) {
+      setPopup("open");
       props.open(true);
-    } else if (round == 9 && input != randomNum){
-      setPopup('open')
-      setResult('คุณแพ้')
+    } else if (round == 9 && input != randomNum) {
+      setPopup("open");
+      setResult("คุณแพ้");
       props.open(true);
-      inputBox.disabled = true
+      inputBox.disabled = true;
     }
   }
-  function ShowValue(num){
-    if(num > randomNum){
-      setShowValue('มีค่าน้อยกว่า '+ num)
-    }else if(num < randomNum){
-      setShowValue('มีค่ามากกว่า '+ num)
-
+  function ShowValue(num) {
+    if (num > randomNum) {
+      setShowValue("มีค่าน้อยกว่า " + num);
+    } else if (num < randomNum) {
+      setShowValue("มีค่ามากกว่า " + num);
     }
   }
 
   return (
     <>
-      <GamePopup num={randomNum} display={popup} round={count} result={result}/>
+      <GamePopup
+        num={randomNum}
+        display={popup}
+        round={count}
+        result={result}
+      />
       <div className={`${gameMode} row justify-content-center mt-5`}>
         {mode}
       </div>
@@ -125,21 +129,23 @@ function Game(props) {
               id="num-input"
               className="num-input row col-lg-4 col-md-8 col-sm-12 w-100 text-center mb-5"
               placeholder="กรุณากรอกตัวเลข"
-              onKeyDown={(e) => { 
-                if (e.key === "Enter") { 
-                  SubmitAnswer()
-                } 
-            }} 
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  SubmitAnswer();
+                }
+              }}
             />
           </div>
-          <button className="White text-center fs-3 rounded-pill fw-bold col-12 py-2" onClick={SubmitAnswer}>
+          <button
+            className="White text-center fs-3 rounded-pill fw-bold col-12 py-2"
+            onClick={SubmitAnswer}
+          >
             ยืนยัน
           </button>
         </div>
       </div>
     </>
   );
-
 }
 
 export default Game;
