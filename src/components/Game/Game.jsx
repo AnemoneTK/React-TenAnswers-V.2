@@ -7,7 +7,8 @@ import "./Game.css";
 
 function Game(props) {
   const [mode, setMode] = useState("");
-  let { gameMode } = useParams()
+  const { gameMode } = useParams()
+  console.log(gameMode)
 
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
