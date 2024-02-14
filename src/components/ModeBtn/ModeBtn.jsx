@@ -6,7 +6,7 @@ function ModeBtn(props) {
   return (
     <>
       <Link
-        to={`/game/${props.mode}`}
+        to={'/game/${props.mode}'}
         className={`${props.mode} col-12 d-flex justify-content-center align-items-center`}
       >
         <h1 className="col-10 py-4 text text-center fw-bolder m-0">
