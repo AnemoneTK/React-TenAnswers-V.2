@@ -35,7 +35,7 @@ function Game(props) {
       <GamePopup num={randomNum} display="close" round={count} />
       <div className={`${gameMode} row justify-content-center mt-5`}>{mode}</div>
       <div className="row justify-content-center fs-3 mb-5 text-white">round {count}/10</div>
-      <div className="showInput row d-flex flex-column justify-content-center align-items-center">
+      <div className={`showInput row d-flex flex-column justify-content-center align-items-center ${gameMode == 'easy' ? "visible" : "invisible" }`}>
         <div className="row col-12 justify-content-center text-white fs-5">
             ตัวเลขที่พิมพ์ไปแล้ว
         </div>
@@ -43,7 +43,7 @@ function Game(props) {
           1, 2, 3, 4, 5, 6, 7, 8, 9, 10
         </div>
       </div>
-      <div className="row my-5">
+      <div className={`row my-5 ${gameMode == 'easy' || gameMode == 'normal' ? "visible" : "invisible" }`}>
         <div className="showValue col-12 fs-1 bg-white d-flex justify-content-center align-items-center">มีค่ามากกว่า 90</div>
       </div>
 
