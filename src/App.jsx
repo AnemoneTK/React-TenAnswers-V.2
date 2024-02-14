@@ -20,13 +20,13 @@ function App() {
       <div className="warper">
         <div className="frame position-relative container col-lg-4 col-md-8 col-sm-12 ">
           <Switch>
-            <Route path="/" exact>
+            <Route path="/React-TenAnswers-V.2/" exact>
               <Homepage open={(openOverlay) => setOverlay(openOverlay)} />
             </Route>
-            <Route path="/tutorial">
+            <Route path="/React-TenAnswers-V.2/tutorial">
               <Tutorial />
             </Route>
-            <Route path="/game/:gameMode">
+            <Route path="/React-TenAnswers-V.2/game/:gameMode">
               <Game open={(openOverlay) => setOverlay(openOverlay)} />
             </Route>
           </Switch>
