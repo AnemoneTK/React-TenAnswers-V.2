@@ -7,7 +7,7 @@ import "./Game.css";
 
 function Game(props) {
   const [mode, setMode] = useState("");
-  let gameMode  
+  let { gameMode } = useParams()
 
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
@@ -20,14 +20,13 @@ function Game(props) {
  
   useEffect(() => {
     return () => {
-      gameMode = useParams();
       props.open(false);
       setRandomNum(Math.floor(Math.random() * 100));
       setPopup('close')
       setInputTXT('')
-      if ({gameMode} == "easy") {
+      if (gameMode == "easy") {
         setMode("ง่าย");
-      } else if ({gameMode} == "normal") {
+      } else if (gameMode == "normal") {
         setMode("ปานกลาง");
       } else {
         setMode("ยาก");
