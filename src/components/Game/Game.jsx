@@ -7,6 +7,8 @@ import "./Game.css";
 
 function Game(props) {
   const [mode, setMode] = useState("");
+  const { gameMode } = useParams();
+  const [level, setLevel] = useState("")
 
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
@@ -19,14 +21,14 @@ function Game(props) {
 
   useEffect(() => {
     return () => {
-      const { gameMode } = useParams();
+      setLevel(gameMode)
       props.open(false);
       setRandomNum(Math.floor(Math.random() * 100));
       setPopup("close");
       setInputTXT("");
-      if (gameMode == "easy") {
+      if (level == "easy") {
         setMode("ง่าย");
-      } else if (gameMode == "normal") {
+      } else if (level == "normal") {
         setMode("ปานกลาง");
       } else {
         setMode("ยาก");
@@ -83,7 +85,7 @@ function Game(props) {
         round={count}
         result={result}
       />
-      <div className={`${gameMode} row justify-content-center mt-5`}>
+      <div className={`${level} row justify-content-center mt-5`}>
         {mode}
       </div>
       <div className="row justify-content-center fs-3 mb-5 text-white">
@@ -91,7 +93,7 @@ function Game(props) {
       </div>
       <div
         className={`showInput row d-flex flex-column justify-content-center align-items-center ${
-          gameMode == "easy" ? "visible" : "invisible"
+          level == "easy" ? "visible" : "invisible"
         }`}
       >
         <div className="row col-12 justify-content-center text-white fs-5">
@@ -103,7 +105,7 @@ function Game(props) {
       </div>
       <div
         className={`row my-5 ${
-          gameMode == "easy" || gameMode == "normal" ? "visible" : "invisible"
+          level == "easy" || level == "normal" ? "visible" : "invisible"
         }`}
       >
         <div className="showValue col-12 fs-1 bg-white d-flex justify-content-center align-items-center">
