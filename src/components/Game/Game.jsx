@@ -7,8 +7,6 @@ import "./Game.css";
 
 function Game(props) {
   const [mode, setMode] = useState("");
-  const { gameMode } = useParams()
-  console.log(gameMode)
 
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
@@ -21,6 +19,7 @@ function Game(props) {
  
   useEffect(() => {
     return () => {
+      const { gameMode } = useParams()
       props.open(false);
       setRandomNum(Math.floor(Math.random() * 100));
       setPopup('close')
