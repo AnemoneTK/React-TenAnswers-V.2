@@ -6,21 +6,22 @@ import "./Game.css";
 
           
 function Game(props) {
-  // const [count, setCount] = useState(1);
+  const [count, setCount] = useState(1);
   const [randomNum, setRandomNum] = useState(0);
   useEffect(() => {
     return () => {
       props.open(false);
       setRandomNum(Math.floor(Math.random()*100))
+      setCount(1)
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
-      {/* <TopNav back="d-block" hint="d-block"/> */}
-      <GamePopup num={randomNum}/>
+      <GamePopup num={randomNum} display="close"/>
       <div className="mode row justify-content-center mt-5">Mode</div>
-      <div className="row justify-content-center fs-2 mb-5">round 1/10</div>
+      <div className="row justify-content-center fs-3 mb-5 text-white">round {count}/10</div>
       <div className="showInput row d-flex flex-column justify-content-center align-items-center">
         <div className="row col-12 justify-content-center text-white fs-5">
             ตัวเลขที่พิมพ์ไปแล้ว

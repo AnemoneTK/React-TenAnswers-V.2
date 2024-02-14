@@ -6,6 +6,7 @@ import ModeBtn from "../ModeBtn/ModeBtn";
 import TopNav from "../TopNav/TopNav";
 
 function Homepage(props) {
+
   const [popup, setPopup] = useState(false);
   let popRef = useRef();
 
@@ -17,6 +18,7 @@ function Homepage(props) {
       }
     };
     document.addEventListener("mousedown", screen);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
 
