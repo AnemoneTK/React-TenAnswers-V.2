@@ -21,9 +21,9 @@ function App() {
         <div className="frame position-relative container col-lg-4 col-md-8 col-sm-12 ">
           <HashRouter>
             <Routes>
-              <Route path="/" element={<Homepage open={(openOverlay) => setOverlay(openOverlay)} />} exact />
-              <Route path="/tutorial" element={<Tutorial />}/>
-              <Route path="/game/:gameMode" element={<Game open={(openOverlay) => setOverlay(openOverlay)} />} />
+              <Route path="https://anemonetk.github.io/React-TenAnswers-V.2/" element={<Homepage open={(openOverlay) => setOverlay(openOverlay)} />} exact />
+              <Route path="https://anemonetk.github.io/React-TenAnswers-V.2/tutorial" element={<Tutorial />}/>
+              <Route path="https://anemonetk.github.io/React-TenAnswers-V.2/game/:gameMode" element={<Game open={(openOverlay) => setOverlay(openOverlay)} />} />
             </Routes>
           </HashRouter>
         </div>
