@@ -4,10 +4,9 @@ import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-import { Homepage } from "./components/Homepage/Homepage";
-import { Tutorial } from "./components/Tutorial/Tutorial";
-import { Game } from "./components/Game/Game";
-
+import Homepage from "./components/Homepage/Homepage";
+import Tutorial from "./components/Tutorial/Tutorial";
+import Game from "./components/Game/Game";
 import Overlay from "./components/Overlay";
 
 function App() {
