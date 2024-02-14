@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import Button from "../Button/Button";
 import GamePopup from "./GamePopup/GamePopup";
 import "./Game.css";
 
@@ -25,9 +24,9 @@ function Game(props) {
       setRandomNum(Math.floor(Math.random() * 100));
       setPopup('close')
       setInputTXT('')
-      if (gameMode == "easy") {
+      if (gameMode = "easy") {
         setMode("ง่าย");
-      } else if (gameMode == "normal") {
+      } else if (gameMode = "normal") {
         setMode("ปานกลาง");
       } else {
         setMode("ยาก");
