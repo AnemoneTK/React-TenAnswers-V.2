@@ -1,4 +1,5 @@
 import { useEffect,useState } from "react";
+import { useParams } from "react-router-dom";
 
 import Button from "../Button/Button";
 import GamePopup from "./GamePopup/GamePopup";
@@ -6,6 +7,10 @@ import "./Game.css";
 
           
 function Game(props) {
+  const [mode, setMode] = useState('')
+  let { gameMode } = useParams()
+  
+
   const [count, setCount] = useState(1);
   const [randomNum, setRandomNum] = useState(0);
   useEffect(() => {
@@ -13,14 +18,22 @@ function Game(props) {
       props.open(false);
       setRandomNum(Math.floor(Math.random()*100))
       setCount(1)
+
+      if(gameMode == 'easy'){
+        setMode('ง่าย')
+      } else if (gameMode == 'normal'){
+        setMode('ปานกลาง')
+      }else{
+        setMode('ยาก')
+      }
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
-      <GamePopup num={randomNum} display="close" round={count}/>
-      <div className="mode row justify-content-center mt-5">Mode</div>
+      <GamePopup num={randomNum} display="open" round={count} />
+      <div className="mode row justify-content-center mt-5">{mode}</div>
       <div className="row justify-content-center fs-3 mb-5 text-white">round {count}/10</div>
       <div className="showInput row d-flex flex-column justify-content-center align-items-center">
         <div className="row col-12 justify-content-center text-white fs-5">
@@ -38,7 +51,7 @@ function Game(props) {
       <div className="row col-12 justify-content-center">
         <div className="row col-8 justify-content-center">
           <div className="hint-box row col-12 text-center">
-            <p id="hint" className="hint text-danger">
+            <p id="hint" className="hint text-danger text-warp">
               กรุณากรอกตัวเลขจำนวนเต็มตั้งแต่ 0-99
             </p>
           </div>

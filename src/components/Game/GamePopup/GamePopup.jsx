@@ -16,7 +16,7 @@ function GamePopup(props) {
       >
         <div className="row fs-1 fw-bolder">คุณชนะ</div>
 
-        <div className="row fs-4 mt-3">คำตอบคือ</div>
+        <div className="row fs-4 mt-2">คำตอบคือ</div>
         <div className="answer row fw-bolder mb-2">{props.num}</div>
         <div className="row fs-4 mb-3">รอบที่ใช้ {props.round}/10</div>
 

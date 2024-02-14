@@ -15,23 +15,23 @@ a{
     transition: all .5s ease-in-out;
 }
 
-.easy:hover{
+.Easy:hover{
     color: var(--white);
     background-color: var(--blue);
 
     transition: all 0.3s ease;
 }
-.normal .text{
+.Normal .text{
     border-top: 3px solid var(--background);
     border-bottom: 3px solid var(--background);
 }
-.normal:hover{
+.Normal:hover{
     color: var(--white);
     background-color: var(--orange);
 
     transition: all 0.3s ease;
 }
-.hard:hover{
+.Hard:hover{
     color: var(--white);
     background-color: var(--red);
 
