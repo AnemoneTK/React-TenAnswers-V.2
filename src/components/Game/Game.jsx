@@ -22,9 +22,11 @@ function Game(props) {
 
  
   useEffect(() => {
-      if (!popRef.current.contains()) {
-        props.open(false)
-    }
+    const screen = (e) => {
+      if (!popRef.current.contains(e.target)) {
+        setPopup(false);
+      }
+    };
     return () => {
       props.open(false);
       setRandomNum(Math.floor(Math.random() * 100));
