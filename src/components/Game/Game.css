@@ -3,7 +3,7 @@
     height: auto;
 }
 .showMode{
-    min-height: 4rem;
+    min-height: 5rem;
     height: auto;
 }
 .round{
@@ -17,7 +17,7 @@
 }
 
 .showValue {
-    min-height: 3rem;
+    min-height: 5rem;
     height: auto;
 }
 

@@ -81,7 +81,7 @@ function Game() {
       <div className={`${level} showMode row justify-content-center mt-5`}>
         {level}
       </div>
-      <div className="round row justify-content-center fs-3 mb-5 text-white">
+      <div className="round row justify-content-center fs-3 mb-3 text-white">
         รอบที่ใช้ {count}/10
       </div>
       <div
