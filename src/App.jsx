@@ -11,8 +11,15 @@ import Overlay from "./components/Overlay";
 
 function App() {
   const [openOverlay, setOverlay] = useState(false);
+  // const [mode, setMode] = useState("");
   useEffect(() => {
-    setOverlay(false)
+    const screen = (e) => {
+      if (!popRef.current.contains(e.target)) {
+        props.open(false);
+      }
+    };
+    document.addEventListener("mousedown", screen);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>
