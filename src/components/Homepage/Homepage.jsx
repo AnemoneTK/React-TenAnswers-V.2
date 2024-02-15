@@ -32,7 +32,7 @@ function Homepage() {
             // props.open(true);
           }}
         >
-          <Button textValue="เริ่มเกมใหม่" type="White" />
+          <Button textValue="Start" type="White" />
         </div>
       </div>
 
