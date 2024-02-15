@@ -12,8 +12,8 @@
 }
 .showTxt {
     font-size: 2rem;
-    height: 3rem;
-    /* height: auto; */
+    min-height: 3rem;
+    height: auto;
     display: inline !important;
 }
 
