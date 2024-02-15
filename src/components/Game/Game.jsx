@@ -8,7 +8,8 @@ function Game() {
   // const [gameMode, setGameMode] = useState("");
   const level = sessionStorage.getItem("level")
   const inputRef = useRef("");
-const inputBox = document.getElementById("num-input")
+
+  const inputBox = document.getElementById("num-input").value
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
   const [inputTXT, setInputTXT] = useState('');
@@ -26,13 +27,6 @@ const inputBox = document.getElementById("num-input")
       // setGameMode(level)
       setPopup('close')
       setInputTXT('')
-      if (level == "easy") {
-        setShowMode("ง่าย");
-      } else if (level == "normal") {
-        setShowMode("ปานกลาง");
-      } else if (level == "hard"){
-        setShowMode("ยาก");
-      }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
@@ -49,11 +43,10 @@ const inputBox = document.getElementById("num-input")
       }else{
         setInputTXT(inputTXT + ' , ' + input)
       }
-      inputBox.value = ''
     }else{
       setWarning(true)
-      inputBox.value = ''
     }
+    inputBox = ""
     inputBox.focus()
   }
 
@@ -86,7 +79,7 @@ const inputBox = document.getElementById("num-input")
       </div>
       <div
         className={`showInput row d-flex flex-column justify-content-center align-items-center ${
-          level == "easy" ? "visible" : "invisible"
+          level == "Easy" ? "visible" : "invisible"
         }`}
       >
         <div className="row col-12 justify-content-center text-white fs-5">
@@ -98,7 +91,7 @@ const inputBox = document.getElementById("num-input")
       </div>
       <div
         className={`row my-5 ${
-          level == "easy" || level == "normal" ? "visible" : "invisible"
+          level == "Easy" || level == "Normal" ? "visible" : "invisible"
         }`}
       >
         <div className="showValue col-12 fs-1 bg-white d-flex justify-content-center align-items-center">
