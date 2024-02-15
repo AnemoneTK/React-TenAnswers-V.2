@@ -6,7 +6,7 @@ import ModeBtn from "../ModeBtn/ModeBtn";
 import TopNav from "../TopNav/TopNav";
 // import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-function Homepage(props) {
+function Homepage() {
   const [popup, setPopup] = useState(false);
   // const popRef = useRef();
 
