@@ -4,19 +4,19 @@ import GamePopup from "./GamePopup/GamePopup";
 import "./Game.css";
 
 function Game() {
-  // const [showMode, setShowMode] = useState("");
+  const [showMode, setShowMode] = useState("");
   // const [gameMode, setGameMode] = useState("");
   const level = sessionStorage.getItem("level")
   const inputRef = useRef("");
-  const inputBox = document.getElementById("num-input")
 
+  const inputBox = document.getElementById("num-input")
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
   const [inputTXT, setInputTXT] = useState('');
   const [warning, setWarning] = useState(false);
   const [result,setResult] = useState('คุณชนะ')
   const [popup, setPopup] = useState('close')
-  const popRef = useRef();
+  // const popRef = useRef();
 
   const [showValue, setShowValue] = useState('')
 
@@ -27,13 +27,13 @@ function Game() {
       // setGameMode(level)
       setPopup('close')
       setInputTXT('')
-      // if (level == "easy") {
-      //   setShowMode("ง่าย");
-      // } else if (level == "normal") {
-      //   setShowMode("ปานกลาง");
-      // } else if (level == "hard"){
-      //   setShowMode("ยาก");
-      // }
+      if (level == "Easy") {
+        setShowMode("ง่าย");
+      } else if (level == "Normal") {
+        setShowMode("ปานกลาง");
+      } else if (level == "Hard"){
+        setShowMode("ยาก");
+      }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
@@ -45,19 +45,19 @@ function Game() {
       CheckWin(input,count)
       ShowValue(input)
       setCount(count + 1)
-      inputBox.value=""
       if(inputTXT == ''){
       setInputTXT(input)
       }else{
         setInputTXT(inputTXT + ' , ' + input)
       }
+      inputBox.value = ''
     }else{
-      inputBox.value=""
       setWarning(true)
+      inputBox.value = ''
     }
     inputBox.focus()
   }
-  
+
   function CheckWin(input,round){
     if(input == randomNum){
       setPopup('open')
@@ -78,7 +78,7 @@ function Game() {
 
   return (
     <>
-      <GamePopup num={randomNum} display={popup} round={count} result={result} ref={popRef}/>
+      <GamePopup num={randomNum} display={popup} round={count} result={result}/>
       <div className={`${level} row justify-content-center mt-5`}>
         {level}
       </div>
