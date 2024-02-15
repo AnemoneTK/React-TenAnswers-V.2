@@ -11,7 +11,7 @@ function Game() {
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
   const [inputTXT, setInputTXT] = useState('');
-  const inputBox = document.getElementById('num-input')
+  const inputBox = document.getElementById('num-input').value
   const [warning, setWarning] = useState(false);
   const [result,setResult] = useState('คุณชนะ')
   const [popup, setPopup] = useState('close')
@@ -22,8 +22,6 @@ function Game() {
 
  
   useEffect(() => {
-
-    return () => {
       setRandomNum(Math.floor(Math.random() * 100));
       // setGameMode(level)
       setPopup('close')
@@ -35,14 +33,12 @@ function Game() {
       } else if (level == "hard"){
         setShowMode("ยาก");
       }
-    };
-    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   function SubmitAnswer() {
     // eslint-disable-next-line no-constant-condition
-    let input = inputBox.value
+    let input = inputBox
     if (input >= 0 && input <= 99 && input % 1 == 0 && input != "") {
       setWarning(false)
       CheckWin(input,count)
