@@ -25,6 +25,7 @@ function Game(props) {
     return () => {
       props.open(false);
       setRandomNum(Math.floor(Math.random() * 100));
+      console.log(randomNum)
       setPopup("close");
       setInputTXT("");
       if (gameMode == "easy") {
