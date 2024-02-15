@@ -8,7 +8,7 @@ function Game() {
   // const [gameMode, setGameMode] = useState("");
   const level = sessionStorage.getItem("level")
   const inputRef = useRef();
-  // const inputBox = inputRef.current.value
+  const inputBox = document.getElementById("num-input")
 
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
@@ -51,10 +51,8 @@ function Game() {
       }else{
         setInputTXT(inputTXT + ' , ' + input)
       }
-      inputRef.current.value = ""
     }else{
       setWarning(true)
-      inputRef.current.value = ""
     }
     inputBox.focus()
   }
