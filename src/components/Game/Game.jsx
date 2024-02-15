@@ -25,7 +25,6 @@ function Game(props) {
     return () => {
       props.open(false);
       setRandomNum(Math.floor(Math.random() * 100));
-      console.log(randomNum)
       setPopup("close");
       setInputTXT("");
       if (gameMode == "easy") {
@@ -38,6 +37,8 @@ function Game(props) {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  console.log(randomNum)
+
 
   function SubmitAnswer() {
     // eslint-disable-next-line no-constant-condition
