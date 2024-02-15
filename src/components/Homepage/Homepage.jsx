@@ -44,13 +44,13 @@ function Homepage() {
             rounded-5 bg-white d-flex flex-column justify-content-center align-items-center z-3`}
         // ref={popRef}
       >
-        <div to="/game" className="easy row col-12 d-flex justify-content-center align-items-center" onClick={()=> sessionStorage.setItem("level", "easy")}>
+        <div to="/game" className="easy row col-12 d-flex justify-content-center align-items-center" onClick={()=> sessionStorage.setItem("level", "Easy")}>
           <ModeBtn text="Easy" mode="easy" />
         </div>
-        <div to="/game" className="normal row col-12 d-flex justify-content-center align-items-center" onClick={()=>sessionStorage.setItem("level", "normal")}>
+        <div to="/game" className="normal row col-12 d-flex justify-content-center align-items-center" onClick={()=>sessionStorage.setItem("level", "Normal")}>
           <ModeBtn text="Normal" mode="normal" />
         </div>
-        <div to="/game" className="hard row col-12 d-flex justify-content-center align-items-center" onClick={()=>sessionStorage.setItem("level", "hard")}>
+        <div to="/game" className="hard row col-12 d-flex justify-content-center align-items-center" onClick={()=>sessionStorage.setItem("level", "Hard")}>
           <ModeBtn text="Hard" mode="hard" />
         </div>
       </div>
