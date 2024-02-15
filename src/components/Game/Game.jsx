@@ -8,7 +8,7 @@ function Game() {
   // const [gameMode, setGameMode] = useState("");
   const level = sessionStorage.getItem("level")
   const inputRef = useRef("");
-
+const inputBox = document.getElementById("num-input")
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
   const [inputTXT, setInputTXT] = useState('');
@@ -38,7 +38,7 @@ function Game() {
   
   function SubmitAnswer() {
     // eslint-disable-next-line no-constant-condition
-    let input = inputRef.current.value
+    let input = inputRef.current
     if (input >= 0 && input <= 99 && input % 1 == 0 && input != "") {
       setWarning(false)
       CheckWin(input,count)
