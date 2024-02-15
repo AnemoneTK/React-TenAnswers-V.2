@@ -65,6 +65,7 @@ function Game(props) {
     }
     setPopup('open')
     props.open(true);
+
   }
   function ShowValue(num){
     if(num > randomNum){
