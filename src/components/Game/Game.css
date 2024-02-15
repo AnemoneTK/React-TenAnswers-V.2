@@ -22,19 +22,19 @@
     border-bottom: 3px solid var(--white);
 }
 
-.easy {
+.Easy {
     color: var(--blue);
     font-weight: 700;
     font-size: 4rem;
 }
 
-.normal {
+.Normal {
     color: var(--orange);
     font-weight: 700;
     font-size: 4rem;
 }
 
-.hard {
+.Hard {
     color: var(--red);
     font-weight: 700;
     font-size: 4rem;
