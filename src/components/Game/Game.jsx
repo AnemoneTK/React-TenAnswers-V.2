@@ -1,13 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
-import { useParams, useLocation } from "react-router-dom";
-
-import Button from "../Button/Button";
 import GamePopup from "./GamePopup/GamePopup";
 import "./Game.css";
 
 function Game(props) {
-  const [mode, setMode] = useState("");
+  const [showMode, setShowMode] = useState("");
   // const [gameMode, setGameMode] = useState("");
   const level = sessionStorage.getItem("level")
 
@@ -28,11 +25,11 @@ function Game(props) {
       setPopup('close')
       setInputTXT('')
       if (level == "easy") {
-        setMode("ง่าย");
+        setShowMode("ง่าย");
       } else if (level == "normal") {
-        setMode("ปานกลาง");
+        setShowMode("ปานกลาง");
       } else if (level == "hard"){
-        setMode("ยาก");
+        setShowMode("ยาก");
       }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -83,7 +80,7 @@ function Game(props) {
     <>
       <GamePopup num={randomNum} display={popup} round={count} result={result}/>
       <div className={`${level} row justify-content-center mt-5`}>
-        {mode}
+        {showMode}
       </div>
       <div className="row justify-content-center fs-3 mb-5 text-white">
         รอบที่ใช้ {count}/10
