@@ -22,12 +22,6 @@ function Game(props) {
 
  
   useEffect(() => {
-    const screen = (e) => {
-      if (!popRef.current.contains(e.target)) {
-        setPopup(false);
-      }
-    }
-    document.addEventListener("mousedown", screen);
 
     return () => {
       props.open(false);
@@ -92,7 +86,7 @@ function Game(props) {
     <>
       <GamePopup num={randomNum} display={popup} round={count} result={result} ref={popRef}/>
       <div className={`${level} row justify-content-center mt-5`}>
-        {showMode}
+        {level}
       </div>
       <div className="row justify-content-center fs-3 mb-5 text-white">
         รอบที่ใช้ {count}/10

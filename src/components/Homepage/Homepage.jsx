@@ -45,13 +45,13 @@ function Homepage(props) {
         ref={popRef}
       >
         <div to="/game" className="easy row col-12 d-flex justify-content-center align-items-center" onClick={()=> sessionStorage.setItem("level", "easy")}>
-          <ModeBtn text="ง่าย" mode="easy" />
+          <ModeBtn text="Easy" mode="easy" />
         </div>
         <div to="/game" className="normal row col-12 d-flex justify-content-center align-items-center" onClick={()=>sessionStorage.setItem("level", "normal")}>
-          <ModeBtn text="ปานกลาง" mode="normal" />
+          <ModeBtn text="Normal" mode="normal" />
         </div>
         <div to="/game" className="hard row col-12 d-flex justify-content-center align-items-center" onClick={()=>sessionStorage.setItem("level", "hard")}>
-          <ModeBtn text="ยาก" mode="hard" />
+          <ModeBtn text="Hard" mode="hard" />
         </div>
       </div>
     </>
