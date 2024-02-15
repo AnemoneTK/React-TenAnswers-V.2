@@ -26,7 +26,9 @@ function Game(props) {
       if (!popRef.current.contains(e.target)) {
         setPopup(false);
       }
-    };
+    }
+    document.addEventListener("mousedown", screen);
+
     return () => {
       props.open(false);
       setRandomNum(Math.floor(Math.random() * 100));
