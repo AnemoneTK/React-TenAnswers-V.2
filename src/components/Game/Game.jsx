@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import GamePopup from "./GamePopup/GamePopup";
 import "./Game.css";
 
@@ -15,9 +15,16 @@ function Game(props) {
   const [warning, setWarning] = useState(false);
   const [result,setResult] = useState('คุณชนะ')
   const [popup, setPopup] = useState('close')
+  const popRef = useRef();
+
   const [showValue, setShowValue] = useState('')
+
+
  
   useEffect(() => {
+      if (!popRef.current.contains()) {
+        props.open(false)
+    }
     return () => {
       props.open(false);
       setRandomNum(Math.floor(Math.random() * 100));
@@ -32,6 +39,7 @@ function Game(props) {
         setShowMode("ยาก");
       }
     };
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
@@ -78,7 +86,7 @@ function Game(props) {
 
   return (
     <>
-      <GamePopup num={randomNum} display={popup} round={count} result={result}/>
+      <GamePopup num={randomNum} display={popup} round={count} result={result} ref={popRef}/>
       <div className={`${level} row justify-content-center mt-5`}>
         {showMode}
       </div>
