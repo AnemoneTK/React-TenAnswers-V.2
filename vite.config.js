@@ -4,6 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/"
-  // base: "/React-TenAnswers-V.2/"
+  // base: "/"
+  base: "/React-TenAnswers-V.2/"
 })
