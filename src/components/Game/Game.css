@@ -2,6 +2,10 @@
     min-height: 7rem;
     height: auto;
 }
+.showMode{
+    min-height: 5rem;
+    height: auto;
+}
 .showTxt {
     font-size: 2rem;
     height: 3rem;
