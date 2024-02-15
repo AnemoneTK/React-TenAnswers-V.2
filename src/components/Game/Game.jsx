@@ -92,7 +92,7 @@ function Game() {
         <div className="row col-12 justify-content-center text-white fs-5">
           ตัวเลขที่พิมพ์ไปแล้ว
         </div>
-        <div className="showTxt row col-8 justify-content-center text-center text-white text-wrap mx-4 my-2">
+        <div className="showTxt row col-8 justify-content-center text-center text-white text-wrap px-4 my-2">
           {inputTXT}
         </div>
       </div>
