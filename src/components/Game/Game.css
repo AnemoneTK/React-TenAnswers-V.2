@@ -18,7 +18,7 @@
 
 .showValue {
     min-height: 5rem;
-    height: auto;
+    display: block !important;
 }
 
 .num-input {
