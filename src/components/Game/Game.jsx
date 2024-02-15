@@ -8,7 +8,7 @@ function Game() {
   // const [gameMode, setGameMode] = useState("");
   const level = sessionStorage.getItem("level")
   const inputRef = useRef();
-  const inputBox = document.getElementById("num-input")
+  const [inputBox, setInputBox] = useState('');
 
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
@@ -54,6 +54,7 @@ function Game() {
     }else{
       setWarning(true)
     }
+    setInputBox('')
     inputBox.focus()
   }
 
@@ -125,6 +126,8 @@ function Game() {
               id="num-input"
               className="num-input row col-lg-4 col-md-8 col-sm-12 w-100 text-center mb-5"
               placeholder="กรุณากรอกตัวเลข"
+              onChange={event => setInputBox(event.target.value)}
+              value={inputBox}
               onKeyDown={(e) => { 
                 if (e.key === "Enter") { 
                   SubmitAnswer()
