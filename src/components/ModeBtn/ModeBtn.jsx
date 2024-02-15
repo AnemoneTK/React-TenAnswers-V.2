@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import "./ModeBtn.css";
 
 function ModeBtn(props) {
-  
   return (
     <>
       <Link
-        to={`/React-TenAnswers-V.2/game/${props.mode}`}
+        to={`/game?level=${props.mode}`}
         className={`${props.mode} col-12 d-flex justify-content-center align-items-center`}
       >
         <h1 className="col-10 py-4 text text-center fw-bolder m-0">

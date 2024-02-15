@@ -1,11 +1,16 @@
+.showInput{
+    min-height: 7rem;
+    height: auto;
+}
 .showTxt {
     font-size: 2rem;
-    min-height: 3rem;
-    height: auto;
+    height: 3rem;
+    /* height: auto; */
+    display: inline !important;
 }
 
 .showValue {
-    min-height: 100px;
+    min-height: 80px;
     height: auto;
 }
 
