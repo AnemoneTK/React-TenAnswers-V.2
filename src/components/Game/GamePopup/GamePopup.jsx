@@ -25,7 +25,7 @@ function GamePopup(props) {
         <div className="answer row fw-bolder mb-2">{props.num}</div>
         <div className="row fs-4 mb-3">รอบที่ใช้ {props.round}/10</div>
 
-        <Link to="/" className="row col-8">
+        <Link to="/React-TenAnswers-V.2/" className="row col-8">
           <Button textValue="เริ่มเกมใหม่" type="Black" />
         </Link>
       </div>
