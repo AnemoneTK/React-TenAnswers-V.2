@@ -82,15 +82,15 @@ function Game(props) {
   return (
     <>
       <GamePopup num={randomNum} display={popup} round={count} result={result}/>
-      <div className={`${gameMode} row justify-content-center mt-5`}>
-        {mode}
+      <div className={`${level} row justify-content-center mt-5`}>
+        {level}
       </div>
       <div className="row justify-content-center fs-3 mb-5 text-white">
         รอบที่ใช้ {count}/10
       </div>
       <div
         className={`showInput row d-flex flex-column justify-content-center align-items-center ${
-          gameMode == "easy" ? "visible" : "invisible"
+          level == "easy" ? "visible" : "invisible"
         }`}
       >
         <div className="row col-12 justify-content-center text-white fs-5">
@@ -102,7 +102,7 @@ function Game(props) {
       </div>
       <div
         className={`row my-5 ${
-          gameMode == "easy" || gameMode == "normal" ? "visible" : "invisible"
+          level == "easy" || level == "normal" ? "visible" : "invisible"
         }`}
       >
         <div className="showValue col-12 fs-1 bg-white d-flex justify-content-center align-items-center">
