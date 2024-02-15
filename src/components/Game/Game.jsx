@@ -8,7 +8,8 @@ function Game() {
   // const [gameMode, setGameMode] = useState("");
   const level = sessionStorage.getItem("level")
   const inputRef = useRef();
-  const [inputBox, setInputBox] = useState('');
+  const [inputBox, setInputBox] = useState("");
+  const inputFiled = document.getElementById("num-input")
 
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
@@ -17,8 +18,6 @@ function Game() {
   const [warning, setWarning] = useState(false);
   const [result,setResult] = useState('คุณชนะ')
   const [popup, setPopup] = useState('close')
-  const popRef = useRef();
-
   const [showValue, setShowValue] = useState('')
 
 
@@ -55,7 +54,7 @@ function Game() {
       setWarning(true)
     }
     setInputBox('')
-    inputBox.focus()
+    inputFiled.focus()
   }
 
   function CheckWin(input,round){
@@ -64,7 +63,7 @@ function Game() {
     } else if (round == 9 && input != randomNum){
       setPopup('open')
       setResult('คุณแพ้')
-      inputBox.disabled = true
+      inputFiled.disabled = true
     }
   }
   function ShowValue(num){
@@ -78,7 +77,7 @@ function Game() {
 
   return (
     <>
-      <GamePopup num={randomNum} display={popup} round={count} result={result} ref={popRef}/>
+      <GamePopup num={randomNum} display={popup} round={count} result={result} />
       <div className={`${level} row justify-content-center mt-5`}>
         {level}
       </div>
