@@ -7,7 +7,7 @@ function Game() {
   const [showMode, setShowMode] = useState("");
   // const [gameMode, setGameMode] = useState("");
   const level = sessionStorage.getItem("level")
-  const inputRef = useRef(null);
+  const inputRef = useRef("");
 
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
