@@ -6,6 +6,10 @@
     min-height: 5rem;
     height: auto;
 }
+.round{
+    min-height: 3rem;
+    height: auto;
+}
 .showTxt {
     font-size: 2rem;
     height: 3rem;
