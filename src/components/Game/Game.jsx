@@ -8,8 +8,8 @@ function Game() {
   // const [gameMode, setGameMode] = useState("");
   const level = sessionStorage.getItem("level")
   const inputRef = useRef("");
+  const inputBox = document.getElementById("num-input")
 
-  const inputBox = document.getElementById("num-input").value
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
   const [inputTXT, setInputTXT] = useState('');
@@ -27,6 +27,13 @@ function Game() {
       // setGameMode(level)
       setPopup('close')
       setInputTXT('')
+      if (level == "easy") {
+        setShowMode("ง่าย");
+      } else if (level == "normal") {
+        setShowMode("ปานกลาง");
+      } else if (level == "hard"){
+        setShowMode("ยาก");
+      }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
@@ -38,18 +45,19 @@ function Game() {
       CheckWin(input,count)
       ShowValue(input)
       setCount(count + 1)
+      inputBox.value=""
       if(inputTXT == ''){
       setInputTXT(input)
       }else{
         setInputTXT(inputTXT + ' , ' + input)
       }
     }else{
+      inputBox.value=""
       setWarning(true)
     }
-    inputBox = ""
     inputBox.focus()
   }
-
+  
   function CheckWin(input,round){
     if(input == randomNum){
       setPopup('open')
@@ -79,7 +87,7 @@ function Game() {
       </div>
       <div
         className={`showInput row d-flex flex-column justify-content-center align-items-center ${
-          level == "Easy" ? "visible" : "invisible"
+          level == "easy" ? "visible" : "invisible"
         }`}
       >
         <div className="row col-12 justify-content-center text-white fs-5">
@@ -91,7 +99,7 @@ function Game() {
       </div>
       <div
         className={`row my-5 ${
-          level == "Easy" || level == "Normal" ? "visible" : "invisible"
+          level == "easy" || level == "normal" ? "visible" : "invisible"
         }`}
       >
         <div className="showValue col-12 fs-1 bg-white d-flex justify-content-center align-items-center">
