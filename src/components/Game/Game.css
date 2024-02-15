@@ -3,7 +3,7 @@
     height: auto;
 }
 .showMode{
-    min-height: 5rem;
+    min-height: 4rem;
     height: auto;
 }
 .round{
@@ -14,11 +14,10 @@
     font-size: 2rem;
     min-height: 3rem;
     height: auto;
-    display: block !important;
 }
 
 .showValue {
-    min-height: 80px;
+    min-height: 3rem;
     height: auto;
 }
 
