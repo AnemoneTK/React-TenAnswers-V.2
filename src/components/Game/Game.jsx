@@ -107,7 +107,7 @@ function Game() {
       </div>
 
       {/* <div className="button-container w-100 h-20 d-flex flex-column justify-content-start align-items-center"> */}
-      <div className="row col-12 justify-content-center">
+      <div className="col-12 d-flex justify-content-center">
         <div className="row col-8 justify-content-center">
           <div
             className={`${
