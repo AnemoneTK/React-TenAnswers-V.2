@@ -29,7 +29,13 @@ function Game(props) {
       // setGameMode(level)
       setPopup('close')
       setInputTXT('')
-      
+      if (level == "easy") {
+        setShowMode("ง่าย");
+      } else if (level == "normal") {
+        setShowMode("ปานกลาง");
+      } else if (level == "hard"){
+        setShowMode("ยาก");
+      }
     };
     
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -59,13 +65,13 @@ function Game(props) {
   function CheckWin(input,round){
     if(input == randomNum){
       setPopup('open')
+      props.open(true);
     } else if (round == 9 && input != randomNum){
+      setPopup('open')
       setResult('คุณแพ้')
+      props.open(true);
       inputBox.disabled = true
     }
-    setPopup('open')
-    props.open(true);
-
   }
   function ShowValue(num){
     if(num > randomNum){
@@ -79,7 +85,7 @@ function Game(props) {
   return (
     <>
       <GamePopup num={randomNum} display={popup} round={count} result={result} ref={popRef}/>
-      <div className={`${level} title row justify-content-center mt-5`}>
+      <div className={`${level} row justify-content-center mt-5`}>
         {level}
       </div>
       <div className="row justify-content-center fs-3 mb-5 text-white">
