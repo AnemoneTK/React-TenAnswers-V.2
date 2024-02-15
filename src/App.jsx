@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 
 import "./App.css";
@@ -10,23 +10,23 @@ import Game from "./components/Game/Game";
 import Overlay from "./components/Overlay";
 
 function App() {
-  const [openOverlay, setOverlay] = useState(false);
+  // const [openOverlay, setOverlay] = useState(false);
   // const [mode, setMode] = useState("");
 
   return (
     <>
-      <Overlay open={openOverlay}/>
+      {/* <Overlay open={openOverlay}/> */}
       <div className="warper">
         <div className="frame position-relative container col-lg-4 col-md-8 col-sm-12 ">
           <Switch>
             <Route path="/React-TenAnswers-V.2/" exact>
-              <Homepage open={(openOverlay) => setOverlay(openOverlay)} />
+              <Homepage />
             </Route>
             <Route path="/tutorial">
               <Tutorial />
             </Route>
             <Route path="/game">
-              <Game open={(openOverlay) => setOverlay(openOverlay)} />
+              <Game />
             </Route>
           </Switch>
         </div>

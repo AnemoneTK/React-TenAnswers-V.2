@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import GamePopup from "./GamePopup/GamePopup";
 import "./Game.css";
 
-function Game(props) {
+function Game() {
   const [showMode, setShowMode] = useState("");
   // const [gameMode, setGameMode] = useState("");
   const level = sessionStorage.getItem("level")
@@ -24,7 +24,6 @@ function Game(props) {
   useEffect(() => {
 
     return () => {
-      props.open(false);
       setRandomNum(Math.floor(Math.random() * 100));
       // setGameMode(level)
       setPopup('close')
@@ -65,11 +64,9 @@ function Game(props) {
   function CheckWin(input,round){
     if(input == randomNum){
       setPopup('open')
-      props.open(true);
     } else if (round == 9 && input != randomNum){
       setPopup('open')
       setResult('คุณแพ้')
-      props.open(true);
       inputBox.disabled = true
     }
   }
