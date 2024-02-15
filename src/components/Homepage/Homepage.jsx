@@ -1,5 +1,4 @@
-import { useState } from "react";
-// import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import Logo from "../Logo/Logo";
 import Button from "../Button/Button";
@@ -7,19 +6,19 @@ import ModeBtn from "../ModeBtn/ModeBtn";
 import TopNav from "../TopNav/TopNav";
 // import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-function Homepage() {
+function Homepage(props) {
   const [popup, setPopup] = useState(false);
-  // const popRef = useRef();
+  const popRef = useRef();
 
-  // useEffect(() => {
-  //   const screen = (e) => {
-  //     if (!popRef.current.contains(e.target)) {
-  //       props.open(false);
-  //     }
-  //   };
-  //   document.addEventListener("mousedown", screen);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [props.open]);
+  useEffect(() => {
+    const screen = (e) => {
+      if (!popRef.current.contains(e.target)) {
+        props.open(false);
+      }
+    };
+    document.addEventListener("mousedown", screen);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.open]);
 
   return (
     <>
@@ -30,7 +29,7 @@ function Homepage() {
           className="row col-8"
           onClick={() => {
             setPopup(!popup);
-            // props.open(true);
+            props.open(true);
           }}
         >
           <Button textValue="เริ่มเกมใหม่" type="White" />
@@ -41,7 +40,7 @@ function Homepage() {
         className={`popup ${popup ? "open" : "close"} 
             col-10 position-absolute bottom-0 start-50 translate-middle-x 
             rounded-5 bg-white d-flex flex-column justify-content-center align-items-center z-3`}
-        // ref={popRef}
+        ref={popRef}
       >
         <div to="/game" className="easy row col-12 d-flex justify-content-center align-items-center" onClick={()=> sessionStorage.setItem("level", "Easy")}>
           <ModeBtn text="Easy" mode="easy" />

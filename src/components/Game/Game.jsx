@@ -4,7 +4,7 @@ import GamePopup from "./GamePopup/GamePopup";
 import "./Game.css";
 
 function Game(props) {
-  // const [showMode, setShowMode] = useState("");
+  const [showMode, setShowMode] = useState("");
   // const [gameMode, setGameMode] = useState("");
   const level = sessionStorage.getItem("level")
 
@@ -24,11 +24,12 @@ function Game(props) {
   useEffect(() => {
 
     return () => {
-      // props.open(false);
+      props.open(false);
       setRandomNum(Math.floor(Math.random() * 100));
       // setGameMode(level)
       setPopup('close')
       setInputTXT('')
+      
     };
     
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -58,13 +59,12 @@ function Game(props) {
   function CheckWin(input,round){
     if(input == randomNum){
       setPopup('open')
-      // props.open(true);
     } else if (round == 9 && input != randomNum){
-      setPopup('open')
       setResult('คุณแพ้')
-      // props.open(true);
       inputBox.disabled = true
     }
+    setPopup('open')
+    props.open(true);
   }
   function ShowValue(num){
     if(num > randomNum){
@@ -86,7 +86,7 @@ function Game(props) {
       </div>
       <div
         className={`showInput row d-flex flex-column justify-content-center align-items-center ${
-          level == "Easy" ? "visible" : "invisible"
+          level == "easy" ? "visible" : "invisible"
         }`}
       >
         <div className="row col-12 justify-content-center text-white fs-5">
@@ -98,7 +98,7 @@ function Game(props) {
       </div>
       <div
         className={`row my-5 ${
-          level == "Easy" || level == "Normal" ? "visible" : "invisible"
+          level == "easy" || level == "normal" ? "visible" : "invisible"
         }`}
       >
         <div className="showValue col-12 fs-1 bg-white d-flex justify-content-center align-items-center">
