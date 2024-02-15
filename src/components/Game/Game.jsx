@@ -7,11 +7,11 @@ function Game() {
   const [showMode, setShowMode] = useState("");
   // const [gameMode, setGameMode] = useState("");
   const level = sessionStorage.getItem("level")
+  const inputRef = useRef(null);
 
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
   const [inputTXT, setInputTXT] = useState('');
-  const inputBox = document.getElementById('num-input').value
   const [warning, setWarning] = useState(false);
   const [result,setResult] = useState('คุณชนะ')
   const [popup, setPopup] = useState('close')
@@ -38,7 +38,7 @@ function Game() {
   
   function SubmitAnswer() {
     // eslint-disable-next-line no-constant-condition
-    let input = inputBox
+    let input = inputRef.current.value
     if (input >= 0 && input <= 99 && input % 1 == 0 && input != "") {
       setWarning(false)
       CheckWin(input,count)
@@ -120,6 +120,7 @@ function Game() {
           </div>
           <div className="row col-12">
             <input
+              ref={inputRef}
               type="text"
               id="num-input"
               className="num-input row col-lg-4 col-md-8 col-sm-12 w-100 text-center mb-5"
