@@ -28,7 +28,8 @@ function App() {
               <Tutorial />
             </Route>
             <Route path="/game">
-              <Game open={(openOverlay) => setOverlay(openOverlay)} />
+              <Game />
+              {/* <Game open={(openOverlay) => setOverlay(openOverlay)} /> */}
             </Route>
           </Switch>
         </div>

@@ -24,7 +24,7 @@ function Game(props) {
   useEffect(() => {
 
     return () => {
-      props.open(false);
+      // props.open(false);
       setRandomNum(Math.floor(Math.random() * 100));
       // setGameMode(level)
       setPopup('close')
@@ -58,11 +58,11 @@ function Game(props) {
   function CheckWin(input,round){
     if(input == randomNum){
       setPopup('open')
-      props.open(true);
+      // props.open(true);
     } else if (round == 9 && input != randomNum){
       setPopup('open')
       setResult('คุณแพ้')
-      props.open(true);
+      // props.open(true);
       inputBox.disabled = true
     }
   }
