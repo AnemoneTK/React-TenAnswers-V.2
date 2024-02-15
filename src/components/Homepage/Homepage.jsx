@@ -5,7 +5,6 @@ import Button from "../Button/Button";
 import ModeBtn from "../ModeBtn/ModeBtn";
 import TopNav from "../TopNav/TopNav";
 
-
 function Homepage(props) {
   const [popup, setPopup] = useState(false);
   const popRef = useRef();
@@ -44,9 +43,15 @@ function Homepage(props) {
             rounded-5 bg-white d-flex flex-column justify-content-center align-items-center z-3`}
         ref={popRef}
       >
-        <ModeBtn text="ง่าย" mode="easy" />
-        <ModeBtn text="ปานกลาง" mode="normal" />
-        <ModeBtn text="ยาก" mode="hard" />
+        <div onClick={()=> sessionStorage.setItem("level", "easy")}>
+          <ModeBtn text="ง่าย" mode="easy" />
+        </div>
+        <div onClick={()=>sessionStorage.setItem("level", "normal")}>
+          <ModeBtn text="ปานกลาง" mode="normal" />
+        </div>
+        <div onClick={()=>sessionStorage.setItem("level", "hard")}>
+          <ModeBtn text="ยาก" mode="hard" />
+        </div>
       </div>
     </>
   );

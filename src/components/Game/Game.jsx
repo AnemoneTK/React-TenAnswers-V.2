@@ -8,10 +8,8 @@ import "./Game.css";
 
 function Game(props) {
   const [mode, setMode] = useState("");
-  // let { gameMode } = useParams();
-  const location = useLocation()
-  const queryParameters = new URLSearchParams(location.search)
-  const gameMode = queryParameters.get("level")
+  const [gameMode, setGameMode] = useState("");
+  const level = sessionStorage.getItem("level")
 
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
@@ -24,16 +22,16 @@ function Game(props) {
  
   useEffect(() => {
     return () => {
-      
       props.open(false);
       setRandomNum(Math.floor(Math.random() * 100));
+      setGameMode(level)
       setPopup('close')
       setInputTXT('')
-      if (gameMode == "easy") {
+      if (level == "easy") {
         setMode("ง่าย");
-      } else if (gameMode == "normal") {
+      } else if (level == "normal") {
         setMode("ปานกลาง");
-      } else if (gameMode == "hard"){
+      } else if (level == "hard"){
         setMode("ยาก");
       }
     };
