@@ -78,7 +78,7 @@ function Game() {
   return (
     <>
       <GamePopup num={randomNum} display={popup} round={count} result={result} />
-      <div className={`${level} showMode row justify-content-center mt-5`}>
+      <div className={`${level} showMode row justify-content-center mt-3`}>
         {level}
       </div>
       <div className="round row justify-content-center fs-3 mb-3 text-white">
