@@ -5,7 +5,8 @@
 .showTxt {
     font-size: 2rem;
     height: 3rem;
-    height: auto;
+    /* height: auto; */
+    display: inline !important;
 }
 
 .showValue {
