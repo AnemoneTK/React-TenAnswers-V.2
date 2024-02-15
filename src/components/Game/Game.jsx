@@ -85,7 +85,7 @@ function Game() {
         รอบที่ใช้ {count}/10
       </div>
       <div
-        className={`showInput row d-flex flex-column justify-content-center align-items-center ${
+        className={`showInput row d-flex flex-column justify-content-center align-items-center m-0 ${
           level == "Easy" ? "visible" : "invisible"
         }`}
       >
@@ -101,7 +101,7 @@ function Game() {
           level == "Easy" || level == "Normal" ? "visible" : "invisible"
         }`}
       >
-        <div className="showValue col-12 fs-1 bg-white d-flex justify-content-center align-items-center">
+        <div className="showValue col-12 fs-1 bg-white d-flex justify-content-center align-items-center m-0">
           {showValue}
         </div>
       </div>
