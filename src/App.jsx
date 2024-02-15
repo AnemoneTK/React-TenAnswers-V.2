@@ -12,7 +12,9 @@ import Overlay from "./components/Overlay";
 function App() {
   const [openOverlay, setOverlay] = useState(false);
   // const [mode, setMode] = useState("");
-
+  useEffect(() => {
+    setOverlay(false)
+  }, []);
   return (
     <>
       <Overlay open={openOverlay}/>

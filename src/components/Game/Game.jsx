@@ -4,7 +4,7 @@ import GamePopup from "./GamePopup/GamePopup";
 import "./Game.css";
 
 function Game(props) {
-  const [showMode, setShowMode] = useState("");
+  // const [showMode, setShowMode] = useState("");
   // const [gameMode, setGameMode] = useState("");
   const level = sessionStorage.getItem("level")
 
@@ -29,13 +29,6 @@ function Game(props) {
       // setGameMode(level)
       setPopup('close')
       setInputTXT('')
-      if (level == "easy") {
-        setShowMode("ง่าย");
-      } else if (level == "normal") {
-        setShowMode("ปานกลาง");
-      } else if (level == "hard"){
-        setShowMode("ยาก");
-      }
     };
     
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -93,7 +86,7 @@ function Game(props) {
       </div>
       <div
         className={`showInput row d-flex flex-column justify-content-center align-items-center ${
-          level == "easy" ? "visible" : "invisible"
+          level == "Easy" ? "visible" : "invisible"
         }`}
       >
         <div className="row col-12 justify-content-center text-white fs-5">
@@ -105,7 +98,7 @@ function Game(props) {
       </div>
       <div
         className={`row my-5 ${
-          level == "easy" || level == "normal" ? "visible" : "invisible"
+          level == "Easy" || level == "Normal" ? "visible" : "invisible"
         }`}
       >
         <div className="showValue col-12 fs-1 bg-white d-flex justify-content-center align-items-center">
