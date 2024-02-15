@@ -7,16 +7,17 @@ function Game() {
   const [showMode, setShowMode] = useState("");
   // const [gameMode, setGameMode] = useState("");
   const level = sessionStorage.getItem("level")
-  const inputRef = useRef("");
+  const inputRef = useRef();
+  const inputBox = inputRef.current.value
 
-  const inputBox = document.getElementById("num-input")
   const [count, setCount] = useState(0);
   const [randomNum, setRandomNum] = useState(0);
   const [inputTXT, setInputTXT] = useState('');
+
   const [warning, setWarning] = useState(false);
   const [result,setResult] = useState('คุณชนะ')
   const [popup, setPopup] = useState('close')
-  // const popRef = useRef();
+  const popRef = useRef();
 
   const [showValue, setShowValue] = useState('')
 
@@ -27,11 +28,11 @@ function Game() {
       // setGameMode(level)
       setPopup('close')
       setInputTXT('')
-      if (level == "Easy") {
+      if (level == "easy") {
         setShowMode("ง่าย");
-      } else if (level == "Normal") {
+      } else if (level == "normal") {
         setShowMode("ปานกลาง");
-      } else if (level == "Hard"){
+      } else if (level == "hard"){
         setShowMode("ยาก");
       }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -39,7 +40,7 @@ function Game() {
   
   function SubmitAnswer() {
     // eslint-disable-next-line no-constant-condition
-    let input = inputRef.current
+    let input = inputRef.current.value
     if (input >= 0 && input <= 99 && input % 1 == 0 && input != "") {
       setWarning(false)
       CheckWin(input,count)
@@ -50,10 +51,10 @@ function Game() {
       }else{
         setInputTXT(inputTXT + ' , ' + input)
       }
-      inputBox.value = ''
+      inputBox = ''
     }else{
       setWarning(true)
-      inputBox.value = ''
+      inputBox = ''
     }
     inputBox.focus()
   }
@@ -78,7 +79,7 @@ function Game() {
 
   return (
     <>
-      <GamePopup num={randomNum} display={popup} round={count} result={result}/>
+      <GamePopup num={randomNum} display={popup} round={count} result={result} ref={popRef}/>
       <div className={`${level} row justify-content-center mt-5`}>
         {level}
       </div>
@@ -87,7 +88,7 @@ function Game() {
       </div>
       <div
         className={`showInput row d-flex flex-column justify-content-center align-items-center ${
-          level == "Easy" ? "visible" : "invisible"
+          level == "easy" ? "visible" : "invisible"
         }`}
       >
         <div className="row col-12 justify-content-center text-white fs-5">
@@ -99,7 +100,7 @@ function Game() {
       </div>
       <div
         className={`row my-5 ${
-          level == "Easy" || level == "Normal" ? "visible" : "invisible"
+          level == "easy" || level == "normal" ? "visible" : "invisible"
         }`}
       >
         <div className="showValue col-12 fs-1 bg-white d-flex justify-content-center align-items-center">
