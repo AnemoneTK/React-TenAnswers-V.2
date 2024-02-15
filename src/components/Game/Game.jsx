@@ -8,7 +8,7 @@ import "./Game.css";
 
 function Game(props) {
   const [mode, setMode] = useState("");
-  const [gameMode, setGameMode] = useState("");
+  // const [gameMode, setGameMode] = useState("");
   const level = sessionStorage.getItem("level")
 
   const [count, setCount] = useState(0);
@@ -24,7 +24,7 @@ function Game(props) {
     return () => {
       props.open(false);
       setRandomNum(Math.floor(Math.random() * 100));
-      setGameMode(level)
+      // setGameMode(level)
       setPopup('close')
       setInputTXT('')
       if (level == "easy") {
@@ -83,7 +83,7 @@ function Game(props) {
     <>
       <GamePopup num={randomNum} display={popup} round={count} result={result}/>
       <div className={`${level} row justify-content-center mt-5`}>
-        {level}
+        {mode}
       </div>
       <div className="row justify-content-center fs-3 mb-5 text-white">
         รอบที่ใช้ {count}/10
